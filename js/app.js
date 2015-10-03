@@ -13,15 +13,15 @@
           html : data.data.children[i].data.title
         });
 
-        var imageItems = ' <a href="'+ data.data.children[i].data.url + '"> ' + 'Click to Dread the Donald'  + '</a>'
-
+        var urlItems = ' <p><a href="'+ data.data.children[i].data.url + '"> ' + 'Click to Dread the Donald'  + '</a></p>'
+        var authorItems = ' <p>"' + data.data.children[i].data.author + '"</p>'
+        var imageItems = '<p><img src="' + data.data.children[i].data.thumbnail + '"></p> '
         // $('section > ul').append(listItems, imageItems);
-        $(listItems).append(imageItems);
+        $(listItems).append(urlItems, authorItems, imageItems);
         $('section > ul').append(
           $(listItems)
             // $(imageItems).html()
             );
-
       };
 
       $('section > ul > li').css({
@@ -30,7 +30,7 @@
         padding: "20px",
         width: "600px",
         border: "1px solid black",
-        height: "100px",
+        height: "200px",
         backgroundColor: "green"
       });
     },
